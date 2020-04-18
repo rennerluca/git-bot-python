@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+NAME=${1?Error: You need to enter a name for your repo}
+PRIVACY=${2:-}
+
+python3 script.py $NAME $PRIVACY
