@@ -2,6 +2,11 @@ import time
 from selenium import webdriver
 import os
 import click
+username = os.environ.get('GIT_USER')
+password = os.environ.get('GIT_PASS')
+
+
+
 
 class Git:
     def __init__(self, repoName, privacy=''):
@@ -35,8 +40,9 @@ class Git:
         password_input = self.driver.find_element_by_name('password')
         confirm_btn = self.driver.find_element_by_name('commit')
             #inputs username and password
-        username_input.send_keys("rennerluca")
-        password_input.send_keys("WK^,XsxfqsafY8cCB:")
+
+        username_input.send_keys(username)
+        password_input.send_keys(password)
             #confirms signIn
         confirm_btn.click()
 
